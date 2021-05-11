@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "dr-mih-mappiechart-curve-test",
+  "id": "bcomua-dr-mih-mappiechart-curve-test",
+  "info": {
+    "description": "Grafana 7 PRTG Map for MIH with Curves Test",
+    "author": {
+      "name": "Dmitry RUMYANTSEV",
+      "url": "https://b.com.ua"
+    },
+    "keywords": [
+      "PRTG"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/grafana-starter-panel"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/grafana-starter-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}
