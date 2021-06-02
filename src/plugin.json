@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
   "name": "dr-mih-mappiechart-curve-test",
-  "id": "bcomua-dr-mih-mappiechart-curve-test",
+  "id": "bcomua-drmihmappiechartcurvetest-panel",
   "info": {
     "description": "Grafana 7 PRTG Map for MIH with Curves Test",
     "author": {

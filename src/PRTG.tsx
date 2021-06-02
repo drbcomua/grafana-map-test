@@ -1,19 +1,75 @@
-import { Map, TileLayer, Marker, Popup /*, withLeaflet*/ } from 'react-leaflet';
-// import { Curve } from 'react-leaflet-curve';
+import {
+  Map,
+  TileLayer,
+  Circle,
+  CircleMarker,
+  Polygon,
+  Polyline,
+  Rectangle,
+  Popup /*, withLeaflet*/,
+} from 'react-leaflet';
+// import Curve from 'react-leaflet-curve';
 import React from 'react';
-// import * as RL from 'react-leaflet';
-import { LatLngTuple } from 'leaflet';
+import * as L from 'leaflet';
 
 interface Props {}
 
 export class PRTG extends React.Component<Props> {
-  //   createLeafletElement(props: Props): LeafletElement {
-  //     return new LeafletElement(props.position);
-  //   }
-
-  //   updateLeafletElement(fromProps: Props, toProps: Props): void {}
   render() {
-    const position: LatLngTuple = [51.505, -0.09];
+    const center: L.LatLngTuple = [51.505, -0.09];
+
+    const polyline: L.LatLngTuple[] = [
+      [51.505, -0.09],
+      [51.51, -0.1],
+      [51.51, -0.12],
+    ];
+
+    const multiPolyline: L.LatLngTuple[][] = [
+      [
+        [51.5, -0.1],
+        [51.5, -0.12],
+        [51.52, -0.12],
+      ],
+      [
+        [51.5, -0.05],
+        [51.5, -0.06],
+        [51.52, -0.06],
+      ],
+    ];
+
+    const polygon: L.LatLngTuple[] = [
+      [51.515, -0.09],
+      [51.52, -0.1],
+      [51.52, -0.12],
+    ];
+
+    const multiPolygon: L.LatLngTuple[][] = [
+      [
+        [51.51, -0.12],
+        [51.51, -0.13],
+        [51.53, -0.13],
+      ],
+      [
+        [51.51, -0.05],
+        [51.51, -0.07],
+        [51.53, -0.07],
+      ],
+    ];
+
+    const rectangle: L.LatLngTuple[] = [
+      [51.49, -0.08],
+      [51.5, -0.06],
+    ];
+    const position: L.LatLngTuple = [51.505, -0.09];
+    // const path = [
+    //   'M',
+    //   [50.14874640066278, 14.106445312500002],
+    //   'Q',
+    //   [51.67255514839676, 16.303710937500004],
+    //   [50.14874640066278, 18.676757812500004],
+    //   'T',
+    //   [49.866316729538674, 25.0927734375],
+    // ];
     return (
       <Map
         center={position}
@@ -27,35 +83,18 @@ export class PRTG extends React.Component<Props> {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <Curve
-          positions={[
-            'M',
-            [50.54136296522163, 28.520507812500004],
+        <Circle center={center} fillColor="blue" radius={200} />
+        <CircleMarker center={[51.51, -0.12]} color="red" radius={20}>
+          <Popup>Popup in CircleMarker</Popup>
+        </CircleMarker>
+        <Polyline color="lime" positions={polyline} />
+        <Polyline color="lime" positions={multiPolyline} />
+        <Polygon color="purple" positions={polygon} />
+        <Polygon color="purple" positions={multiPolygon} />
+        <Rectangle bounds={rectangle} color="black" />
 
-            'C',
-            [52.214338608258224, 28.564453125000004],
-            [48.45835188280866, 33.57421875000001],
-            [50.680797145321655, 33.83789062500001],
-
-            'V',
-            [48.40003249610685],
-
-            'L',
-            [47.45839225859763, 31.201171875],
-            [48.40003249610685, 28.564453125000004],
-
-            'Z',
-          ]}
-          options={{ color: 'red', fill: true }}
-        ></Curve> */}
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        {/* <Curve positions={path} option={{ color: 'red', fill: true }} /> */}
       </Map>
     );
   }
 }
-
-// (RL as any).withLeaflet(PRTG);

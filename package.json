@@ -1,7 +1,7 @@
 {
   "name": "bcomua-dr-mih-mappiechart-curve-test",
   "version": "1.0.0",
-  "description": "Grafana 7 PRTG Map for MIH with Curves Test",
+  "description": "Grafana 7 PRTG Map with Curves Test",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
@@ -13,6 +13,7 @@
   "author": "Dmitry RUMYANTSEV",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.13.12",
     "@grafana/data": "latest",
     "@grafana/toolkit": "latest",
     "@grafana/ui": "latest",
@@ -25,6 +26,7 @@
     "node": ">=14"
   },
   "dependencies": {
+    "@elfalem/leaflet-curve": "^0.8.0",
     "leaflet": "^1.7.1",
     "leaflet-ant-path": "^1.3.0",
     "react-leaflet": "^2.5.0",
